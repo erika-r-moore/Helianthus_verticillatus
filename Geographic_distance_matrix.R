@@ -24,7 +24,7 @@ GeoDistanceInKMMatrix <- function(df.geopoints){
     # E.g. g1 <- list(list("index"=1, "lat"=12.1, "lon"=10.1), list("index"=3, "lat"=12.1, "lon"=13.2))
     DistM <- function(g1, g2){
       require("Imap")
-      return(ifelse(g1$index > g2$index, 0, gdist(lat.1=g1$lat, lon.1=g1$lon, lat.2=g2$lat, lon.2=g2$lon, units="km")))
+      return(ifelse(g1$index > g2$index, 0, gdist(lat.1=g1$lat, lon.1=g1$lon, lat.2=g2$lat, lon.2=g2$lon, units="km"))) # can change to miles in units
     }
     return(mapply(DistM, g1, g2))
   }
@@ -53,8 +53,8 @@ library(Imap)
 
 ## this is where you will input your data:
 df.cities<- data.frame(name=c("McNairy Co., TN", "Madison Co., TN", "Georgia", "Alabama", "Mississippi", "Virginia"),
-        lat = c(x),
-        lon = c(x))
+        lat = c(x), #input your latitude coordinates as a string
+        lon = c(x)) #input your longitude coordinates as a string
 geo.distance.km <-round(GeoDistanceInKMMatrix(df.cities), 2)
 
 geo.distance.km
