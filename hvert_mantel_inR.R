@@ -1,16 +1,16 @@
-### Mantel Test in Hvert
+### Performing a Mantel Test in R
 ## Geographic distance vs. Genetic distance
 
-#setwd("C:/Users/Erika/OneDrive - The University of Memphis/H. vert/Data results/R_geo_distance")
-setwd("C:/Users/Erika/OneDrive - The University of Memphis/H. vert/Data results/R_Mantel_Test")
+#Step 1: Set your working directory
 
 
-#Genetic distance matrix generated with R:
-geo_matrix<-read.csv("hvert_geo_distance_matrix_KM.csv")
+#Step 2: Upload your genetic distance matrix. Named it "geo_matrix".
+
 
 ##the package MASS that is used later masks dplyr. So, if MASS was ran prior, this detach command will allow you to run dplyr now.
 #detach("package:MASS", unload=TRUE)
 
+#install.packages("dplyr")
 library(dplyr)
 rownames(geo_matrix) <- geo_matrix[,1]
 geo_matrix <- geo_matrix %>%
@@ -19,11 +19,12 @@ geo_matrix
 class(geo_matrix)
 
 
-#Genetic distance matrix generated from GenAlEx:
-genetic_matrix<-read.csv("hvert_genetic_distance_matrix.csv")
+#Step 3: Upload genetic distance matrix. I generated mine from GenAlEx in Excel:
+#Named the genetic distance matrix "genetic_matrix"
+
 rownames(genetic_matrix) <- genetic_matrix[,1]
 genetic_matrix<- genetic_matrix %>%
-  select(-ï..)
+  select(-Ã¯..)
 genetic_matrix
 class(genetic_matrix)
 
@@ -56,13 +57,3 @@ class(gen_m)
 ibd<- mantel.rtest(geo_m, gen_m, nrepet = 999)
 ibd
 plot(ibd)
-
-
-## Better plot of IBD:
-library(MASS)
-dens <- kde2d(geo_m, gen_m, n=300)
-myPal <- colorRampPalette(c("white","blue","gold", "orange", "red"))
-plot(geo_m, gen_m, pch=20,cex=.5)
-image(dens, col=transp(myPal(300),.7), add=TRUE)
-abline(lm(gen_m~geo_m))
-title("Isolation by distance plot")
