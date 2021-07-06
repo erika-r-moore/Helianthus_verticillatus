@@ -1,10 +1,10 @@
 ### Performing a Mantel Test in R
 ## Geographic distance vs. Genetic distance
 
-#Step 1: Set your working directory
+#### Set your working directory
 
 
-#Step 2: Upload your genetic distance matrix. Named it "geo_matrix".
+#### Upload your genetic distance matrix. Named it "geo_matrix".
 
 
 ##the package MASS that is used later masks dplyr. So, if MASS was ran prior, this detach command will allow you to run dplyr now.
@@ -19,7 +19,7 @@ geo_matrix
 class(geo_matrix)
 
 
-#Step 3: Upload genetic distance matrix. I generated mine from GenAlEx in Excel:
+##### Upload genetic distance matrix. I generated mine from GenAlEx in Excel:
 #Named the genetic distance matrix "genetic_matrix"
 
 rownames(genetic_matrix) <- genetic_matrix[,1]
