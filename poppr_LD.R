@@ -1,7 +1,4 @@
-
-####### poppr for LD #########
-
-
+####### Using poppr to measure multi-locus LD #########
 
 ## Set your Working directory
 
