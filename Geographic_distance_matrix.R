@@ -53,29 +53,13 @@ library(Imap)
 
 ## this is where you will input your data:
 df.cities<- data.frame(name=c("McNairy Co., TN", "Madison Co., TN", "Georgia", "Alabama", "Mississippi", "Virginia"),
-        lat = c(35.058301, 35.491029, 34.135823, 34.134977, 34.947011, 36.92859),
-        lon = c(-88.601807, -88.719902, -85.404075, -85.443063, -89.415152, -80.18808))
+        lat = c(x),
+        lon = c(x))
 geo.distance.km <-round(GeoDistanceInKMMatrix(df.cities), 2)
 
 geo.distance.km
 
 ##Creating .csv sheet:
-setwd("C:/Users/Erika/OneDrive - The University of Memphis/H. vert/Data results/R_geo_distance")
+## Choose the working directory you want the file to be exported to
 write.csv(geo.distance.km, "hvert_geo_distance_matrix_KM.csv")
-
-
-
-
-#### New locations from September collection
-
-#install.packages("Imap")
-library(Imap)
-
-## this is where you will input your data:
-df.cities<- data.frame(name=c("Mississippi", "South72", "River"),
-                       lat = c(34.947011, 34.9457, 34.93089),
-                       lon = c(-89.415152, -89.4154, -89.41313))
-geo.distance.km <-round(GeoDistanceInKMMatrix(df.cities), 2)
-
-geo.distance.km
 
