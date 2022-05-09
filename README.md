@@ -1,2 +1,2 @@
-# Helianthus_verticillatus
-Scripts and input data files from manuscript "Reevaluating genetic diversity and structure of _Helianthus verticillatus_ (Asteraceae) after the discovery of new populations". Please contact me if you need any other scripts or files!
+# _Helianthus verticillatus_ scripts
+Scripts and input data files from manuscript ["Reevaluating genetic diversity and structure of _Helianthus verticillatus_ (Asteraceae) after the discovery of new populations"](https://castaneajournal.com/article/reevaluating-genetic-diversity-and-structure-of-helianthus-verticillatus-asteraceae-after-the-discovery-of-new-populations/). Please contact me if you need any other scripts or files!
